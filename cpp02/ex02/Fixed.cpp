@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
+/*   By: bgenie <bgenie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:35:18 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/21 12:01:53 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/06/21 14:44:10 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Fixed::Fixed(void)
 {
-	std::cout << "Constructor called" << std::endl;
 	this->fixedNb = 0;
 }
 
 Fixed::Fixed(const Fixed& f)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	this->fixedNb = f.getRawBits();
 }
 
@@ -31,12 +29,11 @@ Fixed::Fixed(int const value)
 
 Fixed::Fixed(float const value)
 {
-	this->fixedNb = (int)roundf(value * (1 << this->fractionalBits));
+	this->fixedNb = static_cast<int>(roundf(value * (1 << this->fractionalBits)));
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& o, Fixed const & f)
@@ -67,7 +64,6 @@ int Fixed::toInt(void) const
 
 Fixed& Fixed::operator=(const Fixed& f)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this == &f)
 		return *this;
 	this->fixedNb = f.getRawBits();
@@ -111,7 +107,7 @@ bool Fixed::operator==(const Fixed& f) const
 
 bool Fixed::operator!=(const Fixed& f) const
 {
-	if (this->getRawBits() == f.getRawBits())
+	if (this->getRawBits() != f.getRawBits())
 		return true;
 	return false;
 }

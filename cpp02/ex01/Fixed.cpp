@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
+/*   By: bgenie <bgenie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:35:18 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/20 12:49:19 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/06/21 14:45:40 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(int const value)
 
 Fixed::Fixed(float const value)
 {
-	this->fixedNb = (int)roundf(value * (1 << this->fractionalBits));
+	this->fixedNb = static_cast<int>(roundf(value * (1 << this->fractionalBits)));
 }
 
 Fixed::~Fixed(void)
