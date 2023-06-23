@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgenie <bgenie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 15:37:37 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/21 16:42:36 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/06/23 14:19:37 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,17 @@
 
 ClapTrap::ClapTrap(void)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name): name(name), hp(10), ep(10), dmg(0)
 {
-    std::cout << name << ": Constructor called" << std::endl;
-    this->name = name;
-    this->hp = 10;
-    this->ep = 10;
-    this->dmg = 0;
+    std::cout << "ClapTrap " << name << ": Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& ct)
 {
-    std::cout << ct.name << ": Copy constructor called" << std::endl;
+    std::cout << "ClapTrap " << ct.name << ": Copy constructor called" << std::endl;
     this->name = ct.name;
     this->hp = ct.hp;
     this->ep = ct.ep;
@@ -37,7 +33,7 @@ ClapTrap::ClapTrap(const ClapTrap& ct)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& ct)
 {
-    std::cout << ct.name << ": Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap " << ct.name << ": Copy assignment operator called" << std::endl;
     if (this == &ct)
         return *this;
     this->name = ct.name;
@@ -49,7 +45,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& ct)
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << this->name << ": Destructor called" << std::endl;
+    std::cout << "ClapTrap " << this->name << ": Destructor called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

@@ -6,7 +6,7 @@
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 15:30:10 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/23 14:22:25 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/06/23 14:22:55 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 class ClapTrap
 {
-
     private:
-
+    
     ClapTrap(void);
 
     protected:

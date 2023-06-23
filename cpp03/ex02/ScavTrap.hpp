@@ -6,7 +6,7 @@
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 16:40:53 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/22 18:10:21 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/06/23 13:55:50 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class ScavTrap: public ClapTrap
 {
 	private:
-
+	
 	ScavTrap(void);
 
 	public:
