@@ -6,7 +6,7 @@
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:27:15 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/07 17:10:01 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/11/09 15:32:53 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ std::string Minised::replaceLine(void)
 	{
 		line.erase(res, this->str.size());
 		line.insert(res, this->replacement);
-		res = line.find(this->str, 0);
+		res = line.find(this->str, res + replacement.size());
 	}
 	return line;
 }
