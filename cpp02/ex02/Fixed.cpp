@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgenie <bgenie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:35:18 by bgenie            #+#    #+#             */
-/*   Updated: 2023/06/21 14:44:10 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/11/13 17:09:53 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ Fixed Fixed::operator++(int)
 {
 	Fixed cpy(*this);
 
-	cpy.fixedNb = this->fixedNb++;
+	this->fixedNb++;
 	return cpy;
 }
 
@@ -156,7 +156,7 @@ Fixed Fixed::operator--(int)
 {
 	Fixed cpy(*this);
 
-	cpy.fixedNb = this->fixedNb--;
+	this->fixedNb--;
 	return cpy;
 }
 

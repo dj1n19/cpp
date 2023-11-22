@@ -6,7 +6,7 @@
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:40:30 by bgenie            #+#    #+#             */
-/*   Updated: 2023/11/09 14:18:33 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/11/21 18:21:21 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ template <typename T> Array<T>::~Array(void)
 
 template <typename T> Array<T>::Array(const Array<T>& arr)
 {
-	this->_arr = arr;
+	this->_arr = new T[arr._size];
+	this->_size = arr._size;
+	for (unsigned int i = 0; i < this->size(); i++)
+		this->_arr[i] = arr._arr[i];
 }
 
 template <typename T> Array<T>& Array<T>::operator=(const Array<T>& arr)

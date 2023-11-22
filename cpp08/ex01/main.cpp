@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 16:43:09 by bgenie            #+#    #+#             */
-/*   Updated: 2023/11/21 18:19:06 by bgenie           ###   ########.fr       */
+/*   Created: 2023/11/22 17:12:28 by bgenie            #+#    #+#             */
+/*   Updated: 2023/11/22 17:17:48 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ITER__
-#define __ITER__
-#include <cstdlib>
+#include "Span.hpp"
 
-template <typename T> void iter(T* ptr, size_t n, void (*func)(T&))
+int main(void)
 {
-	for(size_t i = 0; i < n; i++)
-	{
-		func(ptr[i]);
-	}
+	Span span = Span(10000);
 }
-
-#endif
