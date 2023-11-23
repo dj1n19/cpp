@@ -6,7 +6,7 @@
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:05:57 by bgenie            #+#    #+#             */
-/*   Updated: 2023/11/22 17:36:48 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/11/23 04:37:15 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include <vector>
 #include <iterator>
-
+#include <iostream>
 class Span
 {
 	private:
@@ -29,18 +29,22 @@ class Span
 
 		class FullArrayException: std::exception
 		{
-			const char* what(void)
-			{
-				return "the array is full";
-			}
+			public:
+			
+				const char* what(void) const throw()
+				{
+					return "the array is full";
+				}
 		};
 
 		class TooSmallArrayException: std::exception
 		{
-			const char* what(void)
-			{
-				return "the array is too small";
-			}
+			public:
+			
+				const char* what(void) const throw()
+				{
+					return "the array is too small";
+				}
 		};
 
 		Span(void);
@@ -52,6 +56,7 @@ class Span
 		void			addNumber(int n);
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
+		void			fill(std::vector<int>::iterator& start, std::vector<int>::iterator& end);
 };
 
 #endif

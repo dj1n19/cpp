@@ -6,7 +6,7 @@
 /*   By: bgenie <bgenie@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:10:26 by bgenie            #+#    #+#             */
-/*   Updated: 2023/11/22 17:58:17 by bgenie           ###   ########.fr       */
+/*   Updated: 2023/11/23 04:54:46 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ unsigned int Span::shortestSpan(void)
 
 unsigned int Span::longestSpan(void)
 {
-	unsigned int min, max;
+	int min, max;
 	std::vector<int>::iterator it;
 
 	if (this->_arr.size() <= 1)
 		throw TooSmallArrayException();
 		
-	min = std::numeric_limits<unsigned int>::max();
-	max = 0;
+	min = std::numeric_limits<int>::max();
+	max = std::numeric_limits<int>::min();
 
 	for (it = this->_arr.begin(); it != this->_arr.end(); ++it)
 	{
@@ -79,4 +79,11 @@ unsigned int Span::longestSpan(void)
 			max = *it;
 	}
 	return max - min;
+}
+
+void Span::fill(std::vector<int>::iterator& start, std::vector<int>::iterator& end)
+{
+	if (std::distance(start, end) > this->_size)
+		throw FullArrayException();
+	this->_arr.assign(start, end);
 }
